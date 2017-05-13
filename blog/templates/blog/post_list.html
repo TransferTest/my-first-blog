@@ -3,6 +3,15 @@
 		<title>그 소문 들었음?</title>
 	</head>
 	<body>
-		<a href="https://kr.battle.net/heroes/ko">연개소문</a>
+		<div>
+			<a href="https://kr.battle.net/heroes/ko">연개소문</a>
+		</div>
+		<div>
+		{% for post in posts %}
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href = "https://kr.battle.net/heroes/ko">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaksbr }}</p>
+		{% endfor %}
+		</div>
 	</body>
 </html>
