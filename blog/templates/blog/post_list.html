@@ -14,7 +14,7 @@
 		{% for post in posts %}
 			<h1><a href = "https://kr.battle.net/heroes/ko">{{ post.title }}</a></h1>
 			<p>{{ post.text|linebreaksbr }}</p>
-			<p>published: {{ post.published_date }}</p>
+			<p>published: {{ post.published_date }} by {{ post.author }}</p>
 		{% endfor %}
 		</div>
 	</body>
