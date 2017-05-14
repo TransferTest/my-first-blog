@@ -5,18 +5,29 @@
 		<link rel = "stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel = "stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link rel = "stylesheet" href = "{%static 'css/blog.css' %}">
+
+		<div class = "page-header">
+		<h1><a href = "https://ko.wikipedia.org/wiki/%EC%97%B0%EA%B0%9C%EC%86%8C%EB%AC%B8">그 소문 들었음?</a></h1>
+		</div>
+
 		<title>그 소문 들었음?</title>
 	</head>
 	<body>
 		<div>
 			<a href="https://ko.wikipedia.org/wiki/%EC%97%B0%EA%B0%9C%EC%86%8C%EB%AC%B8">연개소문</a>
 		</div>
-		<div>
-		{% for post in posts %}
-			<h1><a href = "https://kr.battle.net/heroes/ko">{{ post.title }}</a></h1>
-			<p>{{ post.text|linebreaksbr }}</p>
-			<p>published: {{ post.published_date }} by {{ post.author }}</p>
-		{% endfor %}
+		<div class = "content container">
+			<div class = "row">
+					<div class = "col-md-8">
+					{% for post in posts %}
+						<div class = "post">
+							<h1><a href = "https://kr.battle.net/heroes/ko">{{ post.title }}</a></h1>
+							<p>{{ post.text|linebreaksbr }}</p>
+							<p>published: {{ post.published_date }} by {{ post.author }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
